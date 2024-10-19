@@ -108,6 +108,10 @@ describe 'User', type: :system do
       it 'ログインに失敗し、ページ遷移しない' do
         expect(current_path).to eq('/users/sign_in')
       end
+
+      it 'ログイン失敗時のフラッシュメッセージを表示する' do
+        expect(page).to have_content('Invalid Email or password')
+      end
     end
   end
 end

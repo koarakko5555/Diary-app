@@ -9,10 +9,9 @@
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
-  </head>
-
-  <body>
-    <main class="container mx-auto mt-28 px-5 flex items-centeer justify-center">
+  <body class="h-screen bg-blue-50">
+    <%= render 'shared/flash' %>
+    <main class="container mx-auto mt-20 py-8 px-5 flex items-center justify-center">
       <%= yield %>
     </main>
   </body>
