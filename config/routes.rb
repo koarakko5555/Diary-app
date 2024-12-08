@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
-  root 'home#top'
+  root 'posts#index' # rootをposts#indexに変更
 
-  resources :posts, only: %i[new create show index destroy edit update] # 追加
+  resources :posts, only: %i[new create show index destroy edit update]
 end
