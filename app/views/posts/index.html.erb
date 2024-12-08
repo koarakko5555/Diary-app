@@ -12,7 +12,9 @@
         </div>
         <!-- カードの本文 -->
         <div class="p-4">
-          <p class="text-gray-600 text-sm"><%= truncate(post.content, length: 100) %></p>
+          <p class="text-gray-600 text-sm">
+            <%= raw(truncate(post.content.gsub("\n", "<br>"), length: 50, escape: false)) %>
+          </p>
         </div>
         <!-- カードのフッター -->
         <div class="p-4 bg-gray-50 text-right">

@@ -20,9 +20,9 @@
           <% end %>
         </div>
       </div>
-      <div class="px-2">
-        <p class="focus:outline-none text-sm leading-5 py-4 text-gray-600"><%= @post.content %></p>
-      </div>
+        <div class="px-2 focus:outline-none text-sm leading-5 py-4 text-gray-600">
+          <%= raw(@post.content.gsub("\n", "<br>")) %>
+        </div>
     </div>
   </div>
 </div>
