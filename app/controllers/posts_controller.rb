@@ -1,5 +1,6 @@
 class PostsController < ApplicationController
-  before_action :set_post, :authenticate_user!, except: %i[show index edit update] # 修正
+  before_action :authenticate_user!, except: %i[show index] # ログイン必須のアクションを設定
+  before_action :set_post, only: %i[show edit update destroy] # 必要なアクションのみに限定
 
   def new
     @post = Post.new
