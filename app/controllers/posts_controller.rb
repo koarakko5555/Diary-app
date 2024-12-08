@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  before_action :authenticate_user!, except: %i[show index] # 修正
+  before_action :set_post, :authenticate_user!, except: %i[show index edit update] # 修正
 
   def new
     @post = Post.new
@@ -17,8 +17,21 @@ class PostsController < ApplicationController
     end
   end
 
-  def show # 追加
+  def show
     @post = Post.find_by(id: params[:id])
+  end
+
+  def edit
+    @post = Post.find(params[:id])
+  end
+
+  def update
+    @post = Post.find(params[:id])
+    if @post.update(post_params)
+      redirect_to @post, notice: '投稿を更新しました'
+    else
+      render :edit, status: :unprocessable_entity
+    end
   end
 
   def index
@@ -35,6 +48,11 @@ class PostsController < ApplicationController
   end
 
   private
+
+  def set_post
+    @post = Post.find_by(id: params[:id]) # 正しい投稿を取得
+    redirect_to posts_path, alert: '投稿が見つかりません。' unless @post
+  end
 
   def post_params
     params.require(:post).permit(:title, :content)
