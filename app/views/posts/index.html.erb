@@ -1,8 +1,7 @@
-<div class="space-y-6 w-3/4 max-w-lg mx-auto">
-  <label class="block text-xl font-bold text-gray-700">学習ログ一覧</label>
+<div class="container mx-auto px-6">
   <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
     <% @posts.each do |post| %>
-      <div class="bg-white shadow-md rounded-lg overflow-hidden">
+      <div class="bg-white shadow-md rounded-lg overflow-hidden mx-auto aspect-[3/4] w-full max-w-xs flex flex-col justify-between">
         <!-- カードのヘッダー -->
         <div class="p-4 border-b border-gray-200">
           <h2 class="text-lg font-semibold text-gray-800">
@@ -11,10 +10,8 @@
           <p class="text-sm text-gray-500 mt-1">by <%= post.user.nickname %></p>
         </div>
         <!-- カードの本文 -->
-        <div class="p-4">
-          <p class="text-gray-600 text-sm">
-            <%= raw(truncate(post.content.gsub("\n", "<br>"), length: 50, escape: false)) %>
-          </p>
+        <div class="p-4 flex-grow">
+          <p class="text-gray-600 text-sm"><%= truncate(post.content, length: 100) %></p>
         </div>
         <!-- カードのフッター -->
         <div class="p-4 bg-gray-50 text-right">
