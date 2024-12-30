@@ -1,5 +1,5 @@
 class User < ApplicationRecord
-  has_many :posts # 追加
+  has_many :posts
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
