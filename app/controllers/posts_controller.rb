@@ -36,7 +36,7 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = current_user.posts.limit(10).order(created_at: :desc)
+    @posts = Post.limit(10).order(created_at: :desc)
   end
 
   def destroy
