@@ -1,24 +1,18 @@
-# README
+## 概要
+- railsの勉強のために作成した日記アプリ
+![top画面](/image/top.png)
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 機能
+- ユーザー登録
+![](/image/regist.png)
+- ログイン
+![](/image/login.png)
+- 投稿
+![](/image/new.png)
+- 詳細を表示/削除
+![](/image/show.png)
+- 編集
+![](/image/edit.png)
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## その他
+- 最初はテストをかいてたけど力尽きた
