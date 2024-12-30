@@ -18,6 +18,10 @@ module TechlogApp
                        routing_specs: false
     end
 
-  config.i18n.default_locale = :ja
+    config.i18n.default_locale = :ja
+    # タイムゾーンを日本標準時に設定
+    config.time_zone = 'Tokyo'
+    # データベースもタイムゾーンを統一
+    config.active_record.default_timezone = :local
   end
 end
